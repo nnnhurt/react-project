@@ -1,2 +1,6 @@
 # React + TypeScript + Vite
-Пример проекта, использующего react, react-router-dom, vite, redux, consta/uikit
+Проект, написанный на:
+react
+react-router-dom
+vite, redux
+consta/uikit
