@@ -1,20 +1,28 @@
-import React from "react"
-import {Card} from "@consta/uikit/Card"
-import {Layout} from "@consta/uikit/Layout"
-import {Text} from "@consta/uikit/Text"
+import { useNavigate } from 'react-router-dom';
+import { Card } from "@consta/uikit/Card"
+import { Layout } from "@consta/uikit/Layout"
+import { Text } from "@consta/uikit/Text"
 
-const MyCard = ({imgURI, name, desc, width="calc(50% - 5px)"}) => {
+const MyCard = ({ imgURI, name, desc, id, height }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/services/${id}`);
+  };
+
   return (
-    <Card style={{ minHeight: "100px", maxWidth: width, width: width}}>
-      <Layout direction="row">
-        <img src={imgURI}  style={{ minWidth: "50px"}}/>
-        <Layout direction="column">
-          <Text weight="bold">{name}</Text>
-          <Text weight="regular">{desc}</Text>
+    <div onClick={handleClick} style={{ cursor: 'pointer', flex: '0 1 calc(50% - 10px)', margin: '2.5px', height: height }}>
+      <Card style={{ minHeight: "100px", width: "100%" }}>
+        <Layout direction="row">
+          <img src={imgURI} alt={name} style={{ minWidth: "50px", maxWidth: "50px", objectFit: "cover" }} />
+          <Layout direction="column">
+            <Text weight="bold">{name}</Text>
+            <Text weight="regular">{desc}</Text>
+          </Layout>
         </Layout>
-      </Layout>
-    </Card>
-  )
-}
+      </Card>
+    </div>
+  );
+};
 
 export default MyCard;

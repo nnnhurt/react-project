@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <header style={{display: "flex", justifyContent: "space-evenly", position: "sticky", top: 0}}>
             <Button label="Главная страница" onClick={() => navigate("/")} />
-            <Button label="Услуги компании" onClick={() => navigate("/about")} />
+            <Button label="Услуги компании" onClick={() => navigate("/services")} />
             <User />
             <Button label="Вход" onClick={() => navigate("/sign_in")} />
         </header>
