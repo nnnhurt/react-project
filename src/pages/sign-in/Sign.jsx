@@ -2,12 +2,21 @@ import { useState } from "react";
 import { Button } from "@consta/uikit/Button";
 import Header from "../../components/header/Header";
 import { Informer } from "@consta/uikit/Informer"
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser, setUser } from "../../store/store";
+import { login } from "../../store/api-methods";
+
+
 
 const SignIn = () => {
     const [formData, setFormData] = useState({
       username: '',
       password: ''
     });
+    const navigate = useNavigate()
+    const user = useSelector(selectUser)
+    const dispatch = useDispatch()
   
 
     const [errorInInput, setErrorInInput] = useState(false);
@@ -25,9 +34,15 @@ const SignIn = () => {
       } else {
         setErrorInInput(false)
       }
-      console.log(formData.username)
+      login(formData.username, formData.password).then((res) => {
+        dispatch(setUser(res))
+        localStorage.setItem("jwt", res.accessToken)
+        localStorage.setItem("refresh", res.refreshToken)  
+        navigate("/")
+      }).catch(() => {
+        setErrorInInput(true)
+      })
     }
-  
     return (
       <>
         <Header />
