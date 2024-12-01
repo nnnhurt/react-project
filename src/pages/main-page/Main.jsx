@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Header from "../../components/header/Header"
-import NewsCard from "../../components/card/NewsCard";
+import NewsCard from "../../components/cards/News";
 
 const Home = () => {
 
