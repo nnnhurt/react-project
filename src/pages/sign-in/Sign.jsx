@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser, setUser } from "../../store/store";
 import { login } from "../../store/api-methods";
+import Footer from "../../components/footer/Foot";
 
 
 
@@ -63,6 +64,7 @@ const SignIn = () => {
 
           </form>
         </main>
+        <Footer/>
       </>
     )
   

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setNews, selectMainNews } from "../../store/store";
 import Header from "../../components/header/Header";
 import NewsCard from "../../components/cards/News";
+import Footer from "../../components/footer/Foot";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const Home = () => {
           )}
         </div>
       </main>
+      <Footer/>
     </>
   );
 };

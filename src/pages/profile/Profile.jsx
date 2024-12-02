@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectUser, setUser } from '../../store/store';
 import { getMe } from '../../store/api-methods';
 import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Foot';
 
 const UserProfile = () => {
   const user = useSelector(selectUser);
@@ -63,6 +64,7 @@ const UserProfile = () => {
         </div>
       </div>
     </div>
+    <Footer/>
     </>
   );
 };
