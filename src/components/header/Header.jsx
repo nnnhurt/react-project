@@ -11,12 +11,12 @@ const Header = () => {
 
     return (
         <header style={{display: "flex", justifyContent: "space-evenly", position: "sticky", top: 0}}>
-            <Button label="Главная страница" onClick={() => navigate("/")} />
-            {user != null ? <Button label="Услуги компании" onClick={() => navigate("/services")} /> : null}
-            {user != null ? <User name={user.username} onClick={() => navigate("/profile")}/> : null}
-            {user == null ? <Button label="Вход" onClick={() => navigate("/sign_in")} />: null}
+            <Button label="Главная страница" onClick={() => navigate("/")} style={{backgroundColor: "red"}} />
+            {user != null ? <Button label="Услуги компании" onClick={() => navigate("/services")} style={{backgroundColor: "red"}} /> : null}
+            {user != null ? <User name={user.username} onClick={() => navigate("/profile")} /> : null}
+            {user == null ? <Button label="Вход" onClick={() => navigate("/sign_in")} style={{backgroundColor: "red"}} />: null}
         </header>
-
+ 
 
     )
 }
